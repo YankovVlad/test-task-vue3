@@ -82,6 +82,15 @@ export default {
   &__list {
     padding: 0;
     margin: 0;
+    max-height: 84vh;
+    @include xl {
+      max-height: 89vh;
+    }
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      width: 0px;
+      background-color: transparent;
+    }
   }
 }
 </style>

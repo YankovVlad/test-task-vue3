@@ -18,6 +18,7 @@
           title="Subcategory"
           type="subcat"
           modal-window-title="New subcategory"
+          :disabled-btn="!subcategories.length"
           icon="plus"
         />
         <router-view name="centralComponent" />
@@ -27,9 +28,9 @@
           title="Equipment List"
           icon="plus"
           type="equip"
+          :disabled-btn="!items.length"
           modal-window-title="New equipment"
         />
-        <!-- <ItemsBar v-if="$route.name === 'items'" /> -->
         <router-view name="rightComponent" />
       </div>
     </main>
@@ -41,6 +42,7 @@ import BarTitle from "../components/ui/BarTitle.vue";
 import CategoryBar from "../components/bars/CategoryBar.vue";
 import ListBar from "../components/bars/listBar/ListBar.vue";
 import ItemsBar from "../components/bars/itemsBar/ItemsBar.vue";
+import { mapGetters } from "vuex";
 export default {
   name: "MainView",
   components: {
@@ -48,6 +50,10 @@ export default {
     ItemsBar,
     CategoryBar,
     BarTitle,
+  },
+  computed: {
+    ...mapGetters("subcategories", ["subcategories"]),
+    ...mapGetters("items", ["items"]),
   },
 };
 </script>
@@ -79,12 +85,17 @@ export default {
   }
 
   &__left-bar {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 90%;
     max-width: 260px;
     width: 25%;
-    min-height: 100%;
     border-right: 1px solid $border-color;
   }
   &__central-bar {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 90%;
     max-width: 260px;
     width: 25%;
     border-right: 1px solid $border-color;

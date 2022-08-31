@@ -4,6 +4,7 @@
       <span class="bar-title__title">{{ title }}</span>
       <IconButton
         :icon="icon"
+        :disabled="disabledBtn"
         @click="toggleModal(true)"
       />
 
@@ -44,6 +45,7 @@ export default {
       type: String,
       default: "",
     },
+    disabledBtn: Boolean,
   },
   data() {
     return {
