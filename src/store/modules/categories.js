@@ -59,7 +59,6 @@ export default {
     editCategory: async ({commit}, payload) => {
       try {
         const res = await categories.editCategory(payload)
-        console.log(res);
         commit("EDIT_CATEGORY", res.data)
         commit("SET_RESPONSE_CODE", res.status)
       } catch (error) {
