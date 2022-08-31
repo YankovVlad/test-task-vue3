@@ -50,8 +50,11 @@ svg {
   padding: 0;
   transition: filter 0.2s ease;
   background: transparent;
-  &:hover svg {
+  &:not(.icon-button:disabled):hover svg {
     filter: brightness(0.8);
+  }
+  &:disabled svg {
+    filter: brightness(0.6);
   }
 }
 </style>

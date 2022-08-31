@@ -59,6 +59,15 @@ export default {
     flex-wrap: wrap;
     gap: 10px;
     padding: 10px;
+    max-height: 84vh;
+    @include xl {
+      max-height: 89vh;
+    }
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      width: 0px;
+      background-color: transparent;
+    }
   }
 }
 </style>
