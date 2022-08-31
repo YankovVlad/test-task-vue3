@@ -1,0 +1,15 @@
+@mixin fontSize($size) {
+  @if $size == "xl" {
+    font-size: 28px;
+    line-height: 42px;
+  } @else if($size == "l") {
+    font-size: 22px;
+    line-height: 33px;
+  } @else if($size == "m") {
+    font-size: 16px;
+    line-height: 18px;
+  } @else if($size == "s") {
+    font-size: 14px;
+    line-height: 16px;
+  } 
+}
